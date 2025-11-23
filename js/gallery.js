@@ -87,7 +87,8 @@ galleryContainer.innerHTML = markup;
 galleryContainer.addEventListener("click", (event) => {
   event.preventDefault();
 
-  if (event.target.nodeName !== "IMG") return;
+  const img = event.target.closest("img");
+  if (!img) return;
 
   const largeImageURL = event.target.dataset.source;
 
